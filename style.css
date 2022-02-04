@@ -7,9 +7,18 @@ body{
 }
 .nav-desktop{
     display: flex; 
-
-    justify-content: space-between;
+justify-content: space-between;
     
+}
+.nav-desktop .signup{
+    color:#0065FC;
+}
+.nav-desktop .signup:hover{
+    border-top: none;
+
+}
+.nav-mobile{
+    display: none;
 }
 .nav-desktop ul{    
     display: flex;
@@ -83,13 +92,15 @@ input{
 .content-filters{
     display: flex;
 }
+.filters-button.mobile{
+    display: none;
+}
 .content-filters h2{
     margin-top: 20px;
 }
 .content-hébergement{
     display: flex;
     flex-wrap: wrap;
-    background-color:#F2F2F2;
 }
 .content-hébergement article{
     width: 30%;
@@ -113,7 +124,7 @@ input{
     color: #0065FC;
 }
 .star-grey{
-    color: grey;
+    color: #F2F2F2;
 }
 .hébergement-populaires{
     display: flex;   
@@ -220,11 +231,93 @@ input{
     display: flex;
     line-height: 30px;
 }
+/*only for destop*/
+@media screen and (min-width:780px){
+    .nav-desktop img{
+        margin-left: 20px;
+    }
+    section.filters{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .hébergement-populaires{
+        margin: 10px 20px;
+    }
+    #activity{
+        margin: 10px;
+        margin-bottom: 20px;
+    }
+    #hébergement h3{
+        margin-left: 20px;
+    }
+    #activity h3{
+        margin-left: 10px;
+    }
+    .show-more{
+        margin-left: 20px;
+    }
+}
 /*FOR MOBILE */
 @media screen and (max-width:700px){
   .nav-desktop{
       display: none;
   } 
+  .nav-mobile{
+      display: block;
+  }
+  .nav-mobile div{
+      display: flex;
+      justify-content: space-between;
+      line-height: 46px;
+      padding: 20px;
+    }
+    .nav-mobile ul{
+        display: flex;
+        padding: 0;
+        margin: 0;
+    }
+    .nav-mobile li{
+        width: 100%;
+    }
+    .nav-mobile ul a{
+        width: 100%;
+        display:inline-block;
+        text-decoration: none;
+        color: black;
+        border-bottom: 2px solid #F2F2F2;
+        text-align: center;
+        padding-bottom: 10px;
+    }
+    .nav-mobile ul a:hover{
+        border-color: #0065FC;
+        color: #0065FC;
+    }
+    .nav-mobile div a{
+        text-decoration: none;
+        color: #0065FC;
+    }
+  .nav-mobile img{
+      width: 100px;
+  }
+  .filters{
+      margin-left: 20px;
+  }
+  .filters ul li{
+      margin-bottom: 20px;
+      margin-right: 10px;
+      margin-left: 0;
+  }
+  .filters-button.mobile{
+      display: inline-block;
+      margin-left: -10px;
+      border-radius: 10px;
+  }
+  .filters-button.desktop{
+      display: none;
+  }
+  .filters ul{
+      margin: 0;
+  }
   .content-filters{
       flex-wrap: wrap;
   } 
@@ -233,12 +326,15 @@ input{
       padding: 0;
   }
   .hébergement-populaires{
-      display: block;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column-reverse;
       padding: 0;
   }
   #hébergement{
       width: 100%;
       padding: 10px;
+      background-color: white;
   }
   .content-hébergement{
       display: block;
@@ -250,9 +346,74 @@ input{
   #populaires{
       width: 100%;
       margin-left: 0;
+      border-radius: 0;
   }
+  #activity{
+      padding: 20px;
+  } 
+  .content-activity{
+      display: block;
+      padding: 0;
+  }
+  .content-activity div{
+      width: 100%;
+      padding: 0;
+  }
+  .content-activity article{
+      margin-bottom: 20px;
+  }
+  .content-activity .tall img{
+      height: 150px;
+  }
+  .nav-footer{
+      display: block;
+      padding: 20px;
+  }
+
 }
 /* FOR TABLET */
 @media screen and (min-width:700px) and (max-width:1024px){
-    
+    .nav-desktop{
+        display: flex;
+    }
+    .filters{
+        margin-left: 30px;
+    }
+    .hébergement-populaires{
+        flex-wrap: wrap;
+    }
+    #hébergement{
+        width: 100%;
+        background-color: white;
+        border-radius: 0;
+    }
+    #hébergement h3{
+        padding-left: 30px;
+    }
+    .show-more{
+        margin-left: 30px;
+    }
+    #activity h4{
+        padding-left: 20px;
+    }
+    #populaires{
+        width: 100%;
+        border-radius: 0;
+        margin-left: 0;
+    }
+    .content-activity div{
+        width: 50%;
+        padding: 10px 20px;
+    }
+    #filters{
+        padding:0 20px;
+    }
+    #content-filters{
+        margin-right: 30px;
+
+    }
+    header img{
+        padding-left: 20px;
+    }
+
 }
